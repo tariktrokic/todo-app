@@ -21,7 +21,10 @@ const AddTasksPage = () => {
             .post('https://todo.crudful.com/tasks', {
                 title: taskTitle,
             })
-            .then((res) => setOpenSuccessModal(true))
+            .then((res) => {
+                setOpenSuccessModal(true)
+                setTaskTitle('')
+            })
             .catch((e) => console.log(e))
     }
 
